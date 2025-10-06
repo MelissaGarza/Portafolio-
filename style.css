@@ -1,11 +1,11 @@
 /* --- Variables de Color y Reseteo Básico --- */
 :root {
-    --bg-color: #121212; /* Gris casi negro para el fondo */
-    --card-color: #1E1E1E; /* Gris oscuro para tarjetas y footer */
-    --primary-color: #2d3436; /* Un gris intermedio */
-    --accent-color: #00b894; /* Verde azulado (teal) como acento */
-    --text-color: #cccccc; /* Texto principal (gris claro) */
-    --header-text-color: #ffffff; /* Texto de cabecera (blanco) */
+    --bg-color: #EDF6F9; /* Blanco hueso / Azul muy claro */
+    --sidebar-color: #FFFFFF; /* Blanco puro para la barra lateral */
+    --text-color: #006D77; /* Azul verdoso oscuro para texto */
+    --accent-color: #E29578; /* Durazno / Terracota */
+    --secondary-accent-color: #83C5BE; /* Menta / Verde claro */
+    --border-color: #e0eaf0; /* Un borde muy sutil */
 }
 
 * {
@@ -22,438 +22,197 @@ body {
     overflow-x: hidden;
 }
 
-/* --- Estructura y Contenedores --- */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
-
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h1, h2, h3, h4 {
-    color: var(--header-text-color);
-    margin-bottom: 1rem;
-}
-
-h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--accent-color);
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-/* --- Barra de Navegación --- */
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(18, 18, 18, 0.8); /* Fondo gris oscuro con transparencia */
-    backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s;
-}
-
-nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--header-text-color);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--header-text-color);
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: var(--accent-color);
-}
-
-/* --- Sección de Inicio (Hero) --- */
-#inicio {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.9)), url('https://www.transparenttextures.com/patterns/cubes.png');
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-}
-
-.hero-content .subtitle {
-    font-size: 1.5rem;
-    color: var(--accent-color);
-    margin-bottom: 2rem;
-}
-
-.hero-content p {
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: transform 0.3s, background-color 0.3s;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    background-color: #00d2b3;
-}
-
-/* --- Sección "Acerca de mí" --- */
-#acerca .about-content {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-}
-
-#acerca .about-text {
-    flex: 2;
-}
-
-#acerca .about-image {
-    flex: 1;
-    text-align: center;
-}
-
-#acerca img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 0 20px rgba(0, 184, 148, 0.3);
-}
-
-#acerca p {
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-
-/* --- Sección de Proyectos --- */
-.projects-grid {
+/* --- ESTRUCTURA PRINCIPAL DE 2 COLUMNAS --- */
+.portfolio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background-color: var(--card-color);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 184, 148, 0.2);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-info {
-    padding: 1.5rem;
-}
-
-.project-info h3 {
-    color: var(--accent-color);
-}
-
-.project-tags {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tag {
-    background-color: var(--primary-color);
-    color: var(--header-text-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-/* --- Sección Certificaciones --- */
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.certification-item {
-    background-color: var(--card-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent-color);
-    transition: transform 0.3s;
-}
-
-.certification-item:hover {
-    transform: translateY(-5px);
-}
-
-.certification-item h3 {
-    font-size: 1.2rem;
-    color: var(--header-text-color);
-}
-
-.certification-item .institution {
-    font-weight: bold;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
-}
-
-.certification-item .date {
-    font-size: 0.9rem;
-    color: var(--text-color);
-}
-
-
-/* --- Sección de Habilidades (CV) --- */
-.skills-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
-
-.skills-category h3 {
-    font-size: 1.5rem;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
+    grid-template-columns: minmax(300px, 380px) 1fr;
     gap: 1rem;
 }
 
-.skill-item {
-    background: var(--card-color);
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    font-weight: 500;
-    transition: transform 0.2s;
-}
-
-.skill-item:hover {
-    transform: scale(1.05);
-}
-
-.skill-item i {
-    color: var(--accent-color);
-    font-size: 1.5rem;
-}
-
-.soft-skills-list li {
-    list-style: none;
-    padding: 0.5rem 0;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.soft-skills-list i {
-    color: var(--accent-color);
-}
-
-.cv-download {
-    text-align: center;
-    margin-top: 4rem;
-}
-
-/* --- Footer --- */
-footer {
-    background-color: var(--card-color);
-    font-size: 1.4rem;
-    text-align: center;
+/* --- BARRA LATERAL FIJA (IZQUIERDA) --- */
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--sidebar-color);
+    border-right: 1px solid var(--border-color);
 }
 
-.social-icons a {
+.profile { text-align: center; }
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--secondary-accent-color);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 20px rgba(131, 197, 190, 0.4);
+}
+
+.creative-name {
+    font-family: 'Caveat', cursive;
+    font-size: 2.8rem;
     color: var(--text-color);
-    font-size: 2rem;
-    margin: 0 1rem;
-    margin-top: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.name-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* Animación para la frase "Aprender crear e innovar" */
+.animated-subtitle span {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+.animated-subtitle span:nth-child(1) { animation-delay: 2.0s; }
+.animated-subtitle span:nth-child(2) { animation-delay: 2.2s; }
+.animated-subtitle span:nth-child(3) { animation-delay: 2.4s; }
+
+.main-nav { margin-top: 3rem; }
+.main-nav ul { list-style: none; }
+.main-nav li { margin: 1.2rem 0; }
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     transition: color 0.3s, transform 0.3s;
 }
 
-.social-icons a:hover {
-    color: var(--accent-color);
-    transform: translateY(-5px);
+.main-nav a span { color: var(--secondary-accent-color); }
+.main-nav a:hover { color: var(--accent-color); transform: translateX(10px); }
+.sidebar-footer { text-align: center; }
+.social-icons {margin: 2.2rem 0 1.5rem 0; }
+.social-icons a { color: var(--text-color); font-size: 1.6rem; margin: 0 0.8rem; transition: color 0.3s, transform 0.3s; }
+.social-icons a:hover { color: var(--accent-color); transform: translateY(-5px); }
+
+.cta-button {
+    display: inline-block; background-color: var(--accent-color); color: #FFFFFF; padding: 10px 24px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+.cta-button:hover { transform: scale(1.05); background-color: #e9a790; box-shadow: 0 5px 15px rgba(226, 149, 120, 0.5); }
+
+/* --- CONTENIDO PRINCIPAL (DERECHA) --- */
+.main-content { padding: 0 3rem; }
+
+section {
+    padding: 4rem 0; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+section:first-child { padding-top: 0; }
+section:last-of-type { margin-bottom: 4rem; }
+section.visible { opacity: 1; transform: translateY(0); }
+
+section.full-screen {
+    min-height: 100vh; display: flex; align-items: center; text-align: left; padding: 2rem;
 }
 
-/* --- Estilos para los Modales --- */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    align-items: center;
-    justify-content: center;
+.welcome-content { max-width: 700px; }
+.welcome-heading { margin-bottom: 1.5rem; }
+.welcome-hola {
+    font-size: 5rem; font-weight: 700; color: var(--text-color); display: inline-block; overflow: hidden; white-space: nowrap; border-right: 4px solid var(--accent-color); animation: typing 1s steps(6, end), blink-caret 0.75s step-end infinite; animation-delay: 0.5s; animation-fill-mode: backwards;
+}
+.welcome-subheading {
+    font-size: 2rem; font-weight: 400; color: var(--text-color); opacity: 0.8;
 }
 
-.modal.active {
-    display: flex;
+.welcome-content p {
+    font-size: 1.15rem; 
+    line-height: 1.8;
+    color: var(--text-color);
 }
 
-.modal-content {
-    background-color: var(--card-color);
-    margin: auto;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 700px;
-    position: relative;
-    animation: fadeIn 0.3s ease-in-out;
+h2 {
+    font-size: 2.2rem; font-weight: 600; margin-bottom: 3rem; color: var(--text-color); letter-spacing: 0.03em;
 }
 
-.modal-close-button {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
+#acerca p {
+    font-size: 1.1rem; 
+    line-height: 1.8;
+    max-width: 800px;
+    margin-bottom: 1rem; 
+    text-align: justify; 
 }
 
-.modal-close-button:hover,
-.modal-close-button:focus {
-    color: var(--accent-color);
+.projects-grid, .certifications-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;
 }
 
-.modal-img {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
+.project-card, .certification-item {
+    background-color: var(--sidebar-color); border-radius: 15px; border: 1px solid var(--border-color); transition: transform 0.3s, box-shadow 0.3s; overflow: hidden; cursor: pointer;
 }
+.project-card:hover, .certification-item:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0, 109, 119, 0.1); }
+.project-info, .certification-item { padding: 1.5rem; }
+.project-card img { width: 100%; height: 200px; object-fit: cover; }
+.project-info h3, .certification-item h3 { color: var(--text-color); font-size: 1.3rem; }
+.project-info p { font-size: 1.05rem; } 
+.project-tags { margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
-.modal-content h4 {
-    margin-top: 1rem;
-    color: var(--accent-color);
-}
-
-.modal-content p {
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-
-/* --- Responsividad --- */
-@media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    nav ul { display: none; }
-    
-    #acerca .about-content {
-        flex-direction: column;
-    }
-    
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* --- Estilos para los botones de proyectos (GitHub) --- */
-.project-links {
-    margin-top: 1.5rem; /* Espacio entre los tags y el botón */
-    text-align: right; /* Alinea el botón a la derecha */
+.tag {
+    background-color: var(--bg-color); color: var(--secondary-accent-color); padding: 5px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: 600;
 }
 
 .github-button {
-    display: inline-flex; /* Para alinear el ícono y el texto */
-    align-items: center;
-    gap: 0.5rem; /* Espacio entre el ícono y el texto */
-    background-color: var(--primary-color);
-    color: var(--header-text-color);
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: background-color 0.3s, transform 0.3s;
+    display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-color); text-decoration: none; margin-top: 1rem; font-weight: 500; font-size: 1rem; /* AJUSTE: Tamaño de letra */
+}
+.github-button:hover { color: var(--accent-color); }
+
+.certification-item .institution { color: var(--accent-color); font-weight: 500; margin: 0.5rem 0; font-size: 1.05rem; /* AJUSTE: Tamaño de letra */ }
+.certification-item .date { font-size: 0.9rem; } 
+.skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.skills-category h3 { font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--text-color); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
+.skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.skill-item {
+    background-color: var(--sidebar-color); border: 1px solid var(--border-color); padding: 0.8rem 1.2rem; border-radius: 8px; display: flex; align-items: center; gap: 0.7rem; font-weight: 500; transition: all 0.3s;
+}
+.skill-item:hover { background-color: var(--secondary-accent-color); color: #FFFFFF; border-color: var(--secondary-accent-color); }
+.skill-item i { color: var(--secondary-accent-color); font-size: 1.5rem; transition: color 0.3s; }
+.skill-item:hover i { color: #FFFFFF; }
+.soft-skills-list li { list-style: none; padding: 0.5rem 0; display: flex; align-items: center; gap: 0.8rem; font-size: 1.05rem; /* AJUSTE: Tamaño de letra */ }
+.soft-skills-list i { color: var(--secondary-accent-color); }
+footer { text-align: center; padding: 2rem 0; color: var(--text-color); opacity: 0.7; }
+
+/* --- Keyframes para animaciones --- */
+@keyframes typing { from { width: 0 } to { width: 10.5rem } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--accent-color); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- ESTILOS RESPONSIVOS --- */
+@media (max-width: 1024px) {
+    .portfolio-container { grid-template-columns: 1fr; }
+    .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); }
+    .main-content { padding: 0 1.5rem; }
+}
+@media (max-width: 768px) {
+    .skills-container { grid-template-columns: 1fr; }
+    .projects-grid, .certifications-grid { grid-template-columns: 1fr; }
+    .welcome-hola { font-size: 4rem; animation: typing 1s steps(6, end), blink-caret 0.75s step-end infinite; animation-delay: 0.5s; animation-fill-mode: backwards; }
+    @keyframes typing { from { width: 0 } to { width: 8.5rem } }
 }
 
-.github-button:hover {
-    background-color: var(--accent-color); /* Cambia al color de acento al pasar el mouse */
-    transform: translateY(-2px);
-}
+/* --- ESTILOS PARA MODALES --- */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 80, 89, 0.7); backdrop-filter: blur(8px); align-items: center; justify-content: center; }
+.modal.active { display: flex; }
+.modal-content { background-color: var(--sidebar-color); color: var(--text-color); margin: auto; padding: 2.5rem; border-radius: 15px; width: 90%; max-width: 750px; position: relative; }
+.modal-close-button { color: var(--text-color); position: absolute; top: 15px; right: 25px; font-size: 2rem; font-weight: bold; cursor: pointer; transition: color 0.3s; }
+.modal-close-button:hover { color: var(--accent-color); }
+.modal-img { width: 100%; height: auto; max-height: 350px; object-fit: cover; border-radius: 10px; margin-bottom: 2rem; }
+.modal-content h4 { margin-top: 1.2rem; color: var(--accent-color); }
+.modal-content p { font-size: 1.05rem; } 
