@@ -45,8 +45,8 @@ body {
 .profile { text-align: center; }
 
 .profile-img {
-    width: 160px;
-    height: 160px;
+    width: 145px;
+    height: 145px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--secondary-accent-color);
@@ -56,7 +56,7 @@ body {
 
 .creative-name {
     font-family: 'Caveat', cursive;
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     color: var(--text-color);
     line-height: 1.2;
     margin-bottom: 0.5rem;
@@ -70,7 +70,7 @@ body {
 .subtitle {
     font-size: 1rem;
     color: var(--accent-color);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* Animación para la frase "Aprender crear e innovar" */
@@ -82,15 +82,15 @@ body {
 .animated-subtitle span:nth-child(2) { animation-delay: 2.2s; }
 .animated-subtitle span:nth-child(3) { animation-delay: 2.4s; }
 
-.main-nav { margin-top: 3rem; }
+.main-nav { margin-top: 2rem; }
 .main-nav ul { list-style: none; }
-.main-nav li { margin: 1.2rem 0; }
+.main-nav li { margin: 1rem 0; }
 
 .main-nav a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    font-size: 1.05rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -100,8 +100,8 @@ body {
 .main-nav a span { color: var(--secondary-accent-color); }
 .main-nav a:hover { color: var(--accent-color); transform: translateX(10px); }
 .sidebar-footer { text-align: center; }
-.social-icons {margin: 2.2rem 0 1.5rem 0; }
-.social-icons a { color: var(--text-color); font-size: 1.6rem; margin: 0 0.8rem; transition: color 0.3s, transform 0.3s; }
+.social-icons {margin: 1.6rem 0 .8rem 0; }
+.social-icons a { color: var(--text-color); font-size: 1.5rem; margin: 0 0.8rem; transition: color 0.3s, transform 0.3s; }
 .social-icons a:hover { color: var(--accent-color); transform: translateY(-5px); }
 
 .cta-button {
@@ -126,10 +126,10 @@ section.full-screen {
 .welcome-content { max-width: 700px; }
 .welcome-heading { margin-bottom: 1.5rem; }
 .welcome-hola {
-    font-size: 5rem; font-weight: 700; color: var(--text-color); display: inline-block; overflow: hidden; white-space: nowrap; border-right: 4px solid var(--accent-color); animation: typing 1s steps(6, end), blink-caret 0.75s step-end infinite; animation-delay: 0.5s; animation-fill-mode: backwards;
+    font-size: 3rem; font-weight: 700; color: var(--text-color); display: inline-block; overflow: hidden; white-space: nowrap; border-right: 4px solid var(--accent-color); animation: typing 1s steps(6, end), blink-caret 0.75s step-end infinite; animation-delay: 0.5s; animation-fill-mode: backwards;
 }
 .welcome-subheading {
-    font-size: 2rem; font-weight: 400; color: var(--text-color); opacity: 0.8;
+    font-size: 1.5rem; font-weight: 400; color: var(--text-color); opacity: 0.8;
 }
 
 .welcome-content p {
@@ -139,13 +139,14 @@ section.full-screen {
 }
 
 h2 {
-    font-size: 2.2rem; font-weight: 600; margin-bottom: 3rem; color: var(--text-color); letter-spacing: 0.03em;
+    font-size: 1.6rem; font-weight: 600; margin-bottom: 3rem; color: var(--text-color); letter-spacing: 0.03em;
 }
 
 #acerca p {
-    font-size: 1.1rem; 
-    line-height: 1.8;
+    font-size: 1rem; 
+    line-height: 2;
     max-width: 800px;
+    margin-right: 5rem;
     margin-bottom: 1rem; 
     text-align: justify; 
 }
@@ -160,8 +161,8 @@ h2 {
 .project-card:hover, .certification-item:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0, 109, 119, 0.1); }
 .project-info, .certification-item { padding: 1.5rem; }
 .project-card img { width: 100%; height: 200px; object-fit: cover; }
-.project-info h3, .certification-item h3 { color: var(--text-color); font-size: 1.3rem; }
-.project-info p { font-size: 1.05rem; } 
+.project-info h3, .certification-item h3 { color: var(--text-color); font-size: 1rem;font-weight: 600; }
+.project-info p { font-size: 1rem; } 
 .project-tags { margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
 .tag {
@@ -173,19 +174,19 @@ h2 {
 }
 .github-button:hover { color: var(--accent-color); }
 
-.certification-item .institution { color: var(--accent-color); font-weight: 500; margin: 0.5rem 0; font-size: 1.05rem; /* AJUSTE: Tamaño de letra */ }
+.certification-item .institution { color: var(--accent-color); font-weight: 500; margin: 0.5rem 0; font-size: 1.05rem;  }
 .certification-item .date { font-size: 0.9rem; } 
 .skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-.skills-category h3 { font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--text-color); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
+.skills-category h3 { font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--text-color); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
 .skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
 
 .skill-item {
-    background-color: var(--sidebar-color); border: 1px solid var(--border-color); padding: 0.8rem 1.2rem; border-radius: 8px; display: flex; align-items: center; gap: 0.7rem; font-weight: 500; transition: all 0.3s;
+    background-color: var(--sidebar-color); border: 1px solid var(--border-color); padding: 0.6rem 1rem; border-radius: 8px; display: flex; align-items: center; gap: 0.7rem; font-weight: 500; transition: all 0.3s;
 }
 .skill-item:hover { background-color: var(--secondary-accent-color); color: #FFFFFF; border-color: var(--secondary-accent-color); }
-.skill-item i { color: var(--secondary-accent-color); font-size: 1.5rem; transition: color 0.3s; }
+.skill-item i { color: var(--secondary-accent-color); font-size: 1rem; transition: color 0.3s; }
 .skill-item:hover i { color: #FFFFFF; }
-.soft-skills-list li { list-style: none; padding: 0.5rem 0; display: flex; align-items: center; gap: 0.8rem; font-size: 1.05rem; /* AJUSTE: Tamaño de letra */ }
+.soft-skills-list li { list-style: none; padding: 0.5rem 0; display: flex; align-items: center; gap: 0.8rem; font-size: 1rem;  }
 .soft-skills-list i { color: var(--secondary-accent-color); }
 footer { text-align: center; padding: 2rem 0; color: var(--text-color); opacity: 0.7; }
 
@@ -208,11 +209,68 @@ footer { text-align: center; padding: 2rem 0; color: var(--text-color); opacity:
 }
 
 /* --- ESTILOS PARA MODALES --- */
-.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 80, 89, 0.7); backdrop-filter: blur(8px); align-items: center; justify-content: center; }
-.modal.active { display: flex; }
-.modal-content { background-color: var(--sidebar-color); color: var(--text-color); margin: auto; padding: 2.5rem; border-radius: 15px; width: 90%; max-width: 750px; position: relative; }
-.modal-close-button { color: var(--text-color); position: absolute; top: 15px; right: 25px; font-size: 2rem; font-weight: bold; cursor: pointer; transition: color 0.3s; }
-.modal-close-button:hover { color: var(--accent-color); }
-.modal-img { width: 100%; height: auto; max-height: 350px; object-fit: cover; border-radius: 10px; margin-bottom: 2rem; }
-.modal-content h4 { margin-top: 1.2rem; color: var(--accent-color); }
-.modal-content p { font-size: 1.05rem; } 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 80, 89, 0.7);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+    margin: auto;
+    padding: 2.5rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 550px; 
+    position: relative;
+    max-height: 90vh; 
+    overflow-y: auto;   
+}
+
+.modal-close-button {
+    color: var(--text-color);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close-button:hover {
+    color: var(--accent-color);
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;   
+    object-fit: cover;     
+    border-radius: 10px;
+    margin-bottom: .5rem;
+    margin-top: -1.5rem;
+}
+
+.modal-content h4 {
+    margin-top: 1.2rem;
+    color: var(--accent-color);
+}
+
+.modal-content p {
+    font-size: 1rem;
+}
